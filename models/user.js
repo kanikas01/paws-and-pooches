@@ -10,8 +10,25 @@ module.exports = function(sequelize, DataTypes) {
     },
     email: {
       type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true
+      }
+    },
+    city: {
+      type: DataTypes.STRING,
       allowNull: false
-      // Possible email validation
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    zip: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        is: /^\d{5}$/
+      }
     }
   });
 
