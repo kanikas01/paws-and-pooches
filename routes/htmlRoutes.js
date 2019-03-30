@@ -6,16 +6,16 @@ module.exports = function(app) {
     db.Pet.findAll({}).then(function(dbPet) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbPet
+        pets: dbPet
       });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
+  app.get("/pet/:id", function(req, res) {
     db.Pet.findOne({ where: { id: req.params.id } }).then(function(dbPet) {
-      res.render("example", {
-        example: dbPet
+      res.render("pet", {
+        pet: dbpet
       });
     });
   });
