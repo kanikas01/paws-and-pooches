@@ -15,7 +15,7 @@ module.exports = function(app) {
   app.get("/pet/:id", function(req, res) {
     db.Pet.findOne({ where: { id: req.params.id } }).then(function(dbPet) {
       res.render("pet", {
-        pet: dbpet
+        pet: dbPet
       });
     });
   });
