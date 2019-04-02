@@ -4,6 +4,11 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+// Initialize Materialize components
+$(document).ready(function() {
+  $("select").formSelect();
+});
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
