@@ -1,9 +1,12 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all pets
+  // Get all pets and associated users
   app.get("/api/pets", function(req, res) {
-    db.Pet.findAll({}).then(function(dbPet) {
+    db.Pet.findAll({
+      include: [db.User],
+      order: [["id", "ASC"]]
+    }).then(function(dbPet) {
       res.json(dbPet);
     });
   });
