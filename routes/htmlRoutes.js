@@ -20,6 +20,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/add-pet", function(req, res) {
+    res.render("add-pet");
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
