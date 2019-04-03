@@ -10,9 +10,6 @@ $(document).ready(function() {
   var $submitBtn = $("#submit");
   var $userList = $("#user-list");
 
-  // Initialize Materialize components
-  $("select").formSelect();
-
   // The API object contains methods for each kind of request we'll make
   var API = {
     saveUser: function(user) {
