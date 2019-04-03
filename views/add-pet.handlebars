@@ -1,75 +1,73 @@
 <div class="container">
 
-    <div class="row">
-        <h2>Add Pet</h2>
-    </div>
+  <div class="row">
+    <h2>Add Pet</h2>
+  </div>
 
+  <div class="row">
+    <form action="/api/pets" class="col s12 z-depth-1" method="POST">
 
-    <div class="row">
-        <form action="" class="col s12 z-depth-1" method="POST">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="name" type="text" class="validate">
+          <label for="name">Pet's name</label>
+        </div>
+      </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="petname" type="text" class="validate">
-                    <label for="petname">Pet's name</label>
-                </div>
-            </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="type">
+            <option value="" disabled selected>Type</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+          </select>
+          <label>Type</label>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="age" type="text" class="validate">
+          <label for="age">Pet's age</label>
+        </div>
+      </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <select>
-                        <option value="" disabled selected>Type</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                    </select>
-                    <label>Type</label>
-                </div>
-            </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="breed" type="text" class="validate">
+          <label for="breed">Pet's breed</label>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="gender">
+              <option value="" disabled selected>Gender</option>
+              <option value="m">Male</option>
+              <option value="f">Female</option>
+          </select>
+          <label>Gender</label>
+        </div>
+      </div>
 
-            <div class="row">
-                <form action="" class="col s12 z-depth-1" method="POST">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="petage" type="text" class="validate">
-                            <label for="petage">Pet's age</label>
-                        </div>
-                    </div>
-            </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="description" type="text" class="validate">
+          <label for="description">Describe your pet!</label>
+        </div>
+      </div>
 
-            <div class="row">
-                <form action="" class="col s12 z-depth-1" method="POST">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="petbreed" type="text" class="validate">
-                            <label for="petbreed">Pet's breed</label>
-                        </div>
-                    </div>
-            </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button class="btn-large waves-effect waves-light" type="submit" id="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <select>
-                        <option value="" disabled selected>Gender</option>
-                        <option value="dog">Male</option>
-                        <option value="cat">Female</option>
-                    </select>
-                    <label>Gender</label>
-                </div>
-            </div>
+    </form>
+  </div>
+</div>
 
-            <div class="row">
-                <form action="" class="col s12 z-depth-1" method="POST">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="description" type="text" class="validate">
-                            <label for="description">Describe your pet!</label>
-                        </div>
-                    </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- Page-specific JS -->
-    <script src="/js/pet.js"></script>
+<!-- Page-specific JS -->
+<script src="/js/pet.js"></script>
