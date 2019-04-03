@@ -3,6 +3,10 @@ $(document).ready(function() {
   // Get references to page elements
   var $userName = $("#username");
   var $userEmail = $("#email");
+  var $userPhone = $("#phone");
+  var $userCity = $("#city");
+  var $userState = $("#state");
+  var $userZip = $("#zip");
   var $submitBtn = $("#submit");
   var $userList = $("#user-list");
 
@@ -71,20 +75,30 @@ $(document).ready(function() {
 
     var user = {
       name: $userName.val().trim(),
-      email: $userEmail.val().trim()
+      email: $userEmail.val().trim(),
+      phone: $userPhone.val().trim(),
+      city: $userCity.val().trim(),
+      state: $userState.val().trim(),
+      zip: $userZip.val().trim()
     };
 
+    // TODO Validation
     if (!(user.name && user.email)) {
       alert("You must enter a user name and email!");
       return;
     }
 
     API.saveUser(user).then(function() {
+      alert("User saved!");
       refreshUsers();
     });
 
     $userName.val("");
     $userEmail.val("");
+    $userPhone.val("");
+    $userCity.val("");
+    $userState.val("");
+    $userZip.val("");
   };
 
   // handleDeleteBtnClick is called when a user's delete button is clicked
