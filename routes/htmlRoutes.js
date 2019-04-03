@@ -22,7 +22,11 @@ module.exports = function(app) {
 
   // Loads the add pet form
   app.get("/add-pet", function(req, res) {
-    res.render("add-pet");
+    db.User.findAll({}).then(function(dbUser) {
+      res.render("add-pet", {
+        users: dbUser
+      });
+    });
   });
 
   // Loads the add user form

@@ -7,6 +7,18 @@
   <div class="row">
     <form action="/api/pets" class="col s12 z-depth-1" method="POST">
 
+    <div class="row">
+        <div class="input-field col s12">
+          <select id="user-id">
+            <option value="" disabled selected>Choose your option</option>
+            {{#each users}}
+            <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+          </select>
+          <label>User</label>
+        </div>
+      </div>
+
       <div class="row">
         <div class="input-field col s12">
           <input id="name" type="text" class="validate">
@@ -17,7 +29,7 @@
       <div class="row">
         <div class="input-field col s12">
           <select id="type">
-            <option value="" disabled selected>Type</option>
+            <option value="" disabled selected>Choose your option</option>
             <option value="dog">Dog</option>
             <option value="cat">Cat</option>
           </select>
@@ -42,7 +54,7 @@
       <div class="row">
         <div class="input-field col s12">
           <select id="gender">
-              <option value="" disabled selected>Gender</option>
+              <option value="" disabled selected>Choose your option</option>
               <option value="m">Male</option>
               <option value="f">Female</option>
           </select>
