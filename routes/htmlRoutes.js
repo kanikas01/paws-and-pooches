@@ -24,14 +24,17 @@ module.exports = function(app) {
   app.get("/add-pet", function(req, res) {
     db.User.findAll({}).then(function(dbUser) {
       res.render("add-pet", {
-        users: dbUser
+        users: dbUser,
+        layout: "form.handlebars"
       });
     });
   });
 
   // Loads the add user form
   app.get("/add-user", function(req, res) {
-    res.render("add-user");
+    res.render("add-pet", {
+      layout: "form.handlebars"
+    });
   });
 
   // Render 404 page for any unmatched routes
