@@ -82,7 +82,15 @@ module.exports = function(app) {
       include: [db.User]
     }).then(function(dbPet) {
       if (dbPet.length === 0) {
-        res.render("no-pets");
+        db.User.findOne({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(dbUser) {
+          res.render("no-pets", {
+            user: dbUser
+          });
+        });
       } else {
         res.render("pets-for-user", {
           pets: dbPet,
