@@ -49,7 +49,7 @@ module.exports = function(app) {
 
   // Load add user form
   app.get("/add-user", function(req, res) {
-    res.render("add-pet", {
+    res.render("add-user", {
       layout: "form.handlebars"
     });
   });
