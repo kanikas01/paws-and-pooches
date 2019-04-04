@@ -13,7 +13,11 @@ module.exports = function(app) {
 
   // Load pet page and pass in pet by id
   app.get("/pet/:id", function(req, res) {
-    db.Pet.findOne({ where: { id: req.params.id } }).then(function(dbPet) {
+    db.Pet.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPet) {
       res.render("pet", {
         pet: dbPet
       });
@@ -22,7 +26,11 @@ module.exports = function(app) {
 
   // Load user page and pass in user by id
   app.get("/user/:id", function(req, res) {
-    db.User.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbUser) {
       res.render("user", {
         user: dbUser
       });
