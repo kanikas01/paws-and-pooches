@@ -50,7 +50,7 @@ $(document).ready(function() {
       return;
     }
 
-    // User name validation
+    // User email validation
     if (
       !$userEmail.val() ||
       !$userEmail
