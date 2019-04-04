@@ -100,8 +100,3 @@ $(document).ready(function() {
   $submitBtn.on("click", handleFormSubmit);
   $exampleList.on("click", ".delete", handleDeleteBtnClick);
 });
-
-// adding parallax initialization
-$(document).ready(function() {
-  $(".parallax").parallax();
-});
