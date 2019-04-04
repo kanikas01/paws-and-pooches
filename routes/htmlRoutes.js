@@ -11,16 +11,33 @@ module.exports = function(app) {
     });
   });
 
-  // Load example page and pass in an example by id
+  // Load pet page and pass in pet by id
   app.get("/pet/:id", function(req, res) {
-    db.Pet.findOne({ where: { id: req.params.id } }).then(function(dbPet) {
+    db.Pet.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPet) {
       res.render("pet", {
         pet: dbPet
       });
     });
   });
 
-  // Loads the add pet form
+  // Load user page and pass in user by id
+  app.get("/user/:id", function(req, res) {
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbUser) {
+      res.render("user", {
+        user: dbUser
+      });
+    });
+  });
+
+  // Load add pet form
   app.get("/add-pet", function(req, res) {
     db.User.findAll({}).then(function(dbUser) {
       res.render("add-pet", {
@@ -30,10 +47,29 @@ module.exports = function(app) {
     });
   });
 
-  // Loads the add user form
+  // Load add user form
   app.get("/add-user", function(req, res) {
-    res.render("add-pet", {
+    res.render("add-user", {
       layout: "form.handlebars"
+    });
+  });
+
+  // Load all pets page
+  app.get("/all-pets", function(req, res) {
+    db.Pet.findAll({}).then(function(dbPet) {
+      res.render("all-pets", {
+        msg: "Welcome!",
+        pets: dbPet
+      });
+    });
+  });
+
+  // Load all users page
+  app.get("/all-users", function(req, res) {
+    db.User.findAll({}).then(function(dbUser) {
+      res.render("all-users", {
+        users: dbUser
+      });
     });
   });
 
