@@ -4,3 +4,13 @@ $(document).ready(function() {
   $("select").formSelect();
   $(".modal").modal();
 });
+
+//burger menu
+$(document).ready(function() {
+  $(".sidenav").sidenav();
+});
+
+// adding parallax initialization
+$(document).ready(function() {
+  $(".parallax").parallax();
+});
