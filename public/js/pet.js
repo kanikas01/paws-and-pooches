@@ -10,6 +10,8 @@ $(document).ready(function() {
   var $petDescription = $("#description");
   var $submitBtn = $("#submit");
   var $petList = $("#pet-list");
+  var $modal = $("#input-modal");
+  var $modalPara = $(".modal-content > p");
 
   // The API object contains methods for each kind of request we'll make
   var API = {
@@ -31,45 +33,67 @@ $(document).ready(function() {
     },
     deletePet: function(id) {
       return $.ajax({
-        url: "api/pets/" + id,
+        url: "/api/pets/" + id,
         type: "DELETE"
       });
     }
-  };
-
-  // refreshPets gets new pets from the db and repopulates the list
-  var refreshPets = function() {
-    API.getPet().then(function(data) {
-      var $pets = data.map(function(pet) {
-        var $a = $("<a>")
-          .text(pet.description)
-          .attr("href", "/pet/" + pet.id);
-
-        var $li = $("<li>")
-          .attr({
-            class: "list-group-item",
-            "data-id": pet.id
-          })
-          .append($a);
-
-        var $button = $("<button>")
-          .addClass("btn btn-danger float-right delete")
-          .text("ｘ");
-
-        $li.append($button);
-
-        return $li;
-      });
-
-      $petList.empty();
-      $petList.append($pets);
-    });
   };
 
   // handleFormSubmit is called whenever we submit a new pet
   // Save the new pet to the db and refresh the list
   var handleFormSubmit = function(event) {
     event.preventDefault();
+
+    // User Id validation
+    if (!$userID.val()) {
+      $modalPara.text("You must choose a User ID.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet name validation
+    if (!$petName.val()) {
+      $modalPara.text("Pet name cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet type validation
+    if (!$petType.val()) {
+      $modalPara.text("You must choose a pet type.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet age validation
+    if (!$petAge.val() || !$petAge.val().match(/^\d+$/)) {
+      $modalPara.text(
+        "Pet age cannot be blank and must be a number. Enter '0' for animals less than one year old."
+      );
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet breed validation
+    if (!$petBreed.val()) {
+      $modalPara.text("Pet breed cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet gender validation
+    if (!$petGender.val()) {
+      $modalPara.text("You must choose a pet gender.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet description validation
+    if (!$petDescription.val()) {
+      $modalPara.text("Pet description cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
 
     var pet = {
       UserId: $userID.val().trim(),
@@ -81,15 +105,9 @@ $(document).ready(function() {
       description: $petDescription.val().trim()
     };
 
-    // TODO Validation
-    if (!(pet.name && pet.type)) {
-      alert("You must enter a pet name and type!");
-      return;
-    }
-
     API.savePet(pet).then(function() {
       alert("Pet saved!");
-      refreshPets();
+      location.assign("/all-pets");
     });
 
     $userID.val("");
@@ -104,13 +122,14 @@ $(document).ready(function() {
   // handleDeleteBtnClick is called when a user's delete button is clicked
   // Remove the user from the db and refresh the list
   var handleDeleteBtnClick = function() {
-    var idToDelete = $(this)
-      .parent()
-      .attr("data-id");
-
-    API.deletePet(idToDelete).then(function() {
-      refreshPets();
-    });
+    if (confirm("Are you sure you want to delete this pet?")) {
+      var idToDelete = $(this)
+        .parent()
+        .attr("data-id");
+      API.deletePet(idToDelete).then(function() {
+        location.reload();
+      });
+    }
   };
 
   // Add event listeners to the submit and delete buttons

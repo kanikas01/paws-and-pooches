@@ -19,7 +19,7 @@ module.exports = function(app) {
   });
 
   // Delete a pet by id
-  app.delete("/api/pets:id", function(req, res) {
+  app.delete("/api/pets/:id", function(req, res) {
     db.Pet.destroy({
       where: {
         id: req.params.id
