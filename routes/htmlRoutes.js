@@ -78,12 +78,17 @@ module.exports = function(app) {
     db.Pet.findAll({
       where: {
         UserId: req.params.id
-      }
+      },
+      include: [db.User]
     }).then(function(dbPet) {
-      res.render("pets-for-user", {
-        pets: dbPet,
-        UserId: dbPet[0].UserId
-      });
+      if (dbPet.length === 0) {
+        res.render("no-pets");
+      } else {
+        res.render("pets-for-user", {
+          pets: dbPet,
+          user: dbPet[0].User
+        });
+      }
     });
   });
 
