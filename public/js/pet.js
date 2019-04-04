@@ -10,6 +10,8 @@ $(document).ready(function() {
   var $petDescription = $("#description");
   var $submitBtn = $("#submit");
   var $petList = $("#pet-list");
+  var $modal = $("#input-modal");
+  var $modalPara = $(".modal-content > p");
 
   // The API object contains methods for each kind of request we'll make
   var API = {
@@ -42,6 +44,57 @@ $(document).ready(function() {
   var handleFormSubmit = function(event) {
     event.preventDefault();
 
+    // User Id validation
+    if (!$userID.val()) {
+      $modalPara.text("You must choose a User ID.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet name validation
+    if (!$petName.val()) {
+      $modalPara.text("Pet name cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet type validation
+    if (!$petType.val()) {
+      $modalPara.text("You must choose a pet type.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet age validation
+    if (!$petAge.val() || !$petAge.val().match(/^\d+$/)) {
+      $modalPara.text(
+        "Pet age cannot be blank and must be a number. Enter '0' for animals less than one year old."
+      );
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet breed validation
+    if (!$petBreed.val()) {
+      $modalPara.text("Pet breed cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet gender validation
+    if (!$petGender.val()) {
+      $modalPara.text("You must choose a pet gender.");
+      $modal.modal("open");
+      return;
+    }
+
+    // Pet description validation
+    if (!$petDescription.val()) {
+      $modalPara.text("Pet description cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
+
     var pet = {
       UserId: $userID.val().trim(),
       name: $petName.val().trim(),
@@ -52,15 +105,9 @@ $(document).ready(function() {
       description: $petDescription.val().trim()
     };
 
-    // TODO Validation
-    if (!(pet.name && pet.type)) {
-      alert("You must enter a pet name and type!");
-      return;
-    }
-
     API.savePet(pet).then(function() {
       alert("Pet saved!");
-      location.reload();
+      location.assign("/all-pets");
     });
 
     $userID.val("");
