@@ -73,6 +73,20 @@ module.exports = function(app) {
     });
   });
 
+  // Load all pets for a given user
+  app.get("/all-pets/:id", function(req, res) {
+    db.Pet.findAll({
+      where: {
+        UserId: req.params.id
+      }
+    }).then(function(dbPet) {
+      res.render("pets-for-user", {
+        pets: dbPet,
+        UserId: dbPet[0].UserId
+      });
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
