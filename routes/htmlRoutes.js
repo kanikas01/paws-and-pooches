@@ -20,6 +20,15 @@ module.exports = function(app) {
     });
   });
 
+  // Load user page 
+  app.get("/user/:id", function(req, res) {
+    db.User.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
+      res.render("user", {
+        user: dbUser
+      });
+    });
+  });
+
   // Loads the add pet form
   app.get("/add-pet", function(req, res) {
     db.User.findAll({}).then(function(dbUser) {
@@ -34,6 +43,24 @@ module.exports = function(app) {
   app.get("/add-user", function(req, res) {
     res.render("add-pet", {
       layout: "form.handlebars"
+    });
+  });
+  
+  // Loads all pets 
+  app.get("/all-pets", function(req, res) {
+    db.Pet.findAll({}).then(function(dbPet) {
+      res.render("all-pets", {
+        msg: "Welcome!",
+        pets: dbPet
+      });
+    });
+  });
+
+  app.get("/all-users", function(req, res) {
+    db.User.findAll({}).then(function(dbUser) {
+      res.render("all-users", {
+        users: dbUser
+      });
     });
   });
 
