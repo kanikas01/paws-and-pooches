@@ -1,3 +1,22 @@
+/* Sticky footer styles */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* End ticky footer styles */
+
+.page-footer {
+  padding-top: 0;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
+
