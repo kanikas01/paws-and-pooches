@@ -9,6 +9,8 @@ $(document).ready(function() {
   var $userZip = $("#zip");
   var $submitBtn = $("#submit");
   var $userList = $("#user-list");
+  var $modal = $("#input-modal");
+  var $modalPara = $(".modal-content > p");
 
   // The API object contains methods for each kind of request we'll make
   var API = {
@@ -41,6 +43,55 @@ $(document).ready(function() {
   var handleFormSubmit = function(event) {
     event.preventDefault();
 
+    // User name validation
+    if (!$userName.val()) {
+      $modalPara.text("User name cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
+
+    // User name validation
+    if (
+      !$userEmail.val() ||
+      !$userEmail
+        .val()
+        .match(
+          /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+        )
+    ) {
+      $modalPara.text("Please enter a valid email address.");
+      $modal.modal("open");
+      return;
+    }
+
+    // User phone validation
+    if (!$userPhone.val()) {
+      $modalPara.text("Phone number cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
+
+    // User city validation
+    if (!$userCity.val()) {
+      $modalPara.text("City cannot be blank.");
+      $modal.modal("open");
+      return;
+    }
+
+    // User state validation
+    if (!$userState.val()) {
+      $modalPara.text("You must choose a state.");
+      $modal.modal("open");
+      return;
+    }
+
+    // User zip code validation
+    if (!$userZip.val() || !$userZip.val().match(/^\d{5}$/)) {
+      $modalPara.text("Zip code cannot be blank and must contain 5 digits.");
+      $modal.modal("open");
+      return;
+    }
+
     var user = {
       name: $userName.val().trim(),
       email: $userEmail.val().trim(),
@@ -50,15 +101,9 @@ $(document).ready(function() {
       zip: $userZip.val().trim()
     };
 
-    // TODO Validation
-    if (!(user.name && user.email)) {
-      alert("You must enter a user name and email!");
-      return;
-    }
-
     API.saveUser(user).then(function() {
       alert("User saved!");
-      location.reload();
+      location.assign("/all-users");
     });
 
     $userName.val("");
