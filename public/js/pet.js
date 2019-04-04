@@ -31,7 +31,7 @@ $(document).ready(function() {
     },
     deletePet: function(id) {
       return $.ajax({
-        url: "api/pets/" + id,
+        url: "/api/pets/" + id,
         type: "DELETE"
       });
     }
@@ -110,6 +110,7 @@ $(document).ready(function() {
 
     API.deletePet(idToDelete).then(function() {
       refreshPets();
+      location.reload();
     });
   };
 

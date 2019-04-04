@@ -30,7 +30,7 @@ $(document).ready(function() {
     },
     deleteUser: function(id) {
       return $.ajax({
-        url: "api/users/" + id,
+        url: "/api/users/" + id,
         type: "DELETE"
       });
     }
@@ -107,6 +107,7 @@ $(document).ready(function() {
 
     API.deleteUser(idToDelete).then(function() {
       refreshUsers();
+      location.reload();
     });
   };
 
