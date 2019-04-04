@@ -10,7 +10,7 @@ main {
   flex: 1 0 auto;
 }
 
-/* End ticky footer styles */
+/* End sticky footer styles */
 
 .page-footer {
   padding-top: 0;
@@ -18,6 +18,5 @@ main {
 
 .list-group-item {
   line-height: 2.5;
-
 }
 
