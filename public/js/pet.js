@@ -37,35 +37,6 @@ $(document).ready(function() {
     }
   };
 
-  // refreshPets gets new pets from the db and repopulates the list
-  var refreshPets = function() {
-    API.getPet().then(function(data) {
-      var $pets = data.map(function(pet) {
-        var $a = $("<a>")
-          .text(pet.description)
-          .attr("href", "/pet/" + pet.id);
-
-        var $li = $("<li>")
-          .attr({
-            class: "list-group-item",
-            "data-id": pet.id
-          })
-          .append($a);
-
-        var $button = $("<button>")
-          .addClass("btn btn-danger float-right delete")
-          .text("ｘ");
-
-        $li.append($button);
-
-        return $li;
-      });
-
-      $petList.empty();
-      $petList.append($pets);
-    });
-  };
-
   // handleFormSubmit is called whenever we submit a new pet
   // Save the new pet to the db and refresh the list
   var handleFormSubmit = function(event) {
@@ -89,7 +60,7 @@ $(document).ready(function() {
 
     API.savePet(pet).then(function() {
       alert("Pet saved!");
-      refreshPets();
+      location.reload();
     });
 
     $userID.val("");
@@ -104,14 +75,14 @@ $(document).ready(function() {
   // handleDeleteBtnClick is called when a user's delete button is clicked
   // Remove the user from the db and refresh the list
   var handleDeleteBtnClick = function() {
-    var idToDelete = $(this)
-      .parent()
-      .attr("data-id");
-
-    API.deletePet(idToDelete).then(function() {
-      refreshPets();
-      location.reload();
-    });
+    if (confirm("Are you sure you want to delete this pet?")) {
+      var idToDelete = $(this)
+        .parent()
+        .attr("data-id");
+      API.deletePet(idToDelete).then(function() {
+        location.reload();
+      });
+    }
   };
 
   // Add event listeners to the submit and delete buttons

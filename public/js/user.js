@@ -36,35 +36,6 @@ $(document).ready(function() {
     }
   };
 
-  // refreshUsers gets new users from the db and repopulates the list
-  var refreshUsers = function() {
-    API.getUsers().then(function(data) {
-      var $users = data.map(function(user) {
-        var $a = $("<a>")
-          .text(user.text)
-          .attr("href", "/user/" + user.id);
-
-        var $li = $("<li>")
-          .attr({
-            class: "list-group-item",
-            "data-id": user.id
-          })
-          .append($a);
-
-        var $button = $("<button>")
-          .addClass("btn btn-danger float-right delete")
-          .text("ｘ");
-
-        $li.append($button);
-
-        return $li;
-      });
-
-      $userList.empty();
-      $userList.append($users);
-    });
-  };
-
   // handleFormSubmit is called whenever we submit a new user
   // Save the new user to the db and refresh the list
   var handleFormSubmit = function(event) {
@@ -87,7 +58,7 @@ $(document).ready(function() {
 
     API.saveUser(user).then(function() {
       alert("User saved!");
-      refreshUsers();
+      location.reload();
     });
 
     $userName.val("");
@@ -101,14 +72,14 @@ $(document).ready(function() {
   // handleDeleteBtnClick is called when a user's delete button is clicked
   // Remove the user from the db and refresh the list
   var handleDeleteBtnClick = function() {
-    var idToDelete = $(this)
-      .parent()
-      .attr("data-id");
-
-    API.deleteUser(idToDelete).then(function() {
-      refreshUsers();
-      location.reload();
-    });
+    if (confirm("Are you sure you want to delete this user?")) {
+      var idToDelete = $(this)
+        .parent()
+        .attr("data-id");
+      API.deleteUser(idToDelete).then(function() {
+        location.reload();
+      });
+    }
   };
 
   // Add event listeners to the submit and delete buttons
