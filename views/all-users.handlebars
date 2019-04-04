@@ -5,14 +5,16 @@
     <p>Checkout all the users that have their pets up for adoption</p>
   </div>
 
-
- <ul class="collection">
+ <ul class="collection" id="user-list">
     {{#each users}}
-    <li class="collection-item">
+    <li class="collection-item" data-id={{this.id}}>
       <a href="user/{{this.id}}">{{this.name}} | {{this.type}}</a>
+      <a href="" class="secondary-content delete"><i class="material-icons">delete</i></a>
     </li>
     {{/each}}
   </ul>
 
-
 </div>
+
+<!-- Page-specific JS -->
+<script src="/js/user.js"></script>
