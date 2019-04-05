@@ -20,3 +20,6 @@ main {
   line-height: 2.5;
 }
 
+h2, p {
+  font-family: 'Arapey', serif;
+}
