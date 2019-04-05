@@ -3,4 +3,6 @@ $(document).ready(function() {
   // Initialize Materialize components
   $("select").formSelect();
   $(".modal").modal();
+  $(".sidenav").sidenav();
+  $(".parallax").parallax();
 });

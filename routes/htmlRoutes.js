@@ -41,17 +41,14 @@ module.exports = function(app) {
   app.get("/add-pet", function(req, res) {
     db.User.findAll({}).then(function(dbUser) {
       res.render("add-pet", {
-        users: dbUser,
-        layout: "form.handlebars"
+        users: dbUser
       });
     });
   });
 
   // Load add user form
   app.get("/add-user", function(req, res) {
-    res.render("add-user", {
-      layout: "form.handlebars"
-    });
+    res.render("add-user");
   });
 
   // Load all pets page
@@ -92,7 +89,7 @@ module.exports = function(app) {
           });
         });
       } else {
-        res.render("pets-for-user", {
+        res.render("all-pets-for-user", {
           pets: dbPet,
           user: dbPet[0].User
         });

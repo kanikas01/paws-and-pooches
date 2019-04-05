@@ -1,16 +1,18 @@
-<div class="container">
-
-  <div class="row">
-    <h2>All pets</h2>
-    <p>Find all the pets looking for a loving home today!</p>
+<main>
+  <div class="container">
+  
+    <div class="row">
+      <h2>All pets</h2>
+      <p>Find all the pets looking for a loving home today!</p>
+    </div>
+  
+    <ul class="collection">
+      {{#each pets}}
+      <li class="collection-item">
+        <a href="/pet/{{this.id}}">{{this.name}} | {{this.type}}</a>
+      </li>
+      {{/each}}
+    </ul>
+  
   </div>
-
-  <ul class="collection">
-    {{#each pets}}
-    <li class="collection-item">
-      <a href="/pet/{{this.id}}">{{this.name}} | {{this.type}}</a>
-    </li>
-    {{/each}}
-  </ul>
-
-</div>
+</main>
