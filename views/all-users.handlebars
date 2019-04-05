@@ -3,14 +3,14 @@
   
     <div class="row">
       <h2>All users</h2>
-      <p>Checkout all the users that have their pets up for adoption</p>
+      <p>Check out all the users that have their pets up for adoption</p>
     </div>
   
    <ul class="collection" id="user-list">
       {{#each users}}
       <li class="collection-item" data-id={{this.id}}>
         <a href="user/{{this.id}}">{{this.name}} | {{this.type}}</a>
-        <a href="" class="secondary-content delete"><i class="material-icons">delete</i></a>
+        {{!-- <a href="" class="secondary-content delete"><i class="material-icons">delete</i></a> --}}
       </li>
       {{/each}}
     </ul>
