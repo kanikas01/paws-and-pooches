@@ -10,16 +10,35 @@ main {
   flex: 1 0 auto;
 }
 
-/* End sticky footer styles */
-
 .page-footer {
   padding-top: 0;
 }
+
+/* End sticky footer styles */
+
+/* '404' and 'no-pets' styling */
+
+.not-found {
+  background-image: url("/images/cat-on-right.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.not-found a {
+  font-size: 1.25rem;
+}
+
+/* END '404' and 'no-pets' styling */
 
 .list-group-item {
   line-height: 2.5;
 }
 
+
 h2, p {
   font-family: 'Arapey', serif;
 }
+
+
