@@ -16,13 +16,16 @@ main {
 
 /* End sticky footer styles */
 
+main {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 /* '404' and 'no-pets' styling */
 
 .not-found {
   background-image: url("/images/cat-on-right.jpg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
   color: whitesmoke;
 }
 
@@ -32,13 +35,19 @@ main {
 
 /* END '404' and 'no-pets' styling */
 
-.list-group-item {
-  line-height: 2.5;
+.info-page {
+  background-image: url("/images/cat-mouth-close.jpg");
 }
 
-
-h2, p {
+/* h2, p {
   font-family: 'Arapey', serif;
+} */
+
+#all-pets-list {
+  width: 60%;
+  margin: auto;
 }
 
-
+.carousel {
+  max-height: 300px;
+}
