@@ -7,16 +7,13 @@
       <p class="center-align">Click on my name below to find out more about me!</p>
     </div>
 
-    <div class="carousel">
-      <a class="carousel-item" href="#one!"><img src="/images/one.jpeg" ></a>
-      <a class="carousel-item" href="#five!"><img src="/images/dogone.jpeg"></a>
-      <a class="carousel-item" href="#two!"><img src="/images/two.jpeg"></a>
-      <a class="carousel-item" href="#six!"><img src="/images/dogtwo.jpeg"></a>
-      <a class="carousel-item" href="#three!"><img src="/images/three.jpeg"></a>
-      <a class="carousel-item" href="#seven!"><img src="/images/dogthree.jpeg"></a>
-      <a class="carousel-item" href="#four!"><img src="/images/four.jpeg"></a>
-      <a class="carousel-item" href="#eight!"><img src="/images/dogfour.jpeg"></a>
-    </div>
+   <div class="row">
+      <div class="carousel">
+        {{#each pets}}
+        <a class="carousel-item center" href="/pet/{{this.id}}"><img src="/images/{{this.type}}-generic.jpeg">{{this.name}}</a>
+        {{/each}}
+      </div>
+   </div>
 
     <div class="row">
       <div class="s12">
