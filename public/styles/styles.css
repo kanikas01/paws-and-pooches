@@ -49,5 +49,6 @@ main {
 }
 
 .carousel {
+  margin-top: -50px;
   max-height: 300px;
 }
