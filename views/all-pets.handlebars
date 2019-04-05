@@ -2,17 +2,28 @@
   <div class="container">
   
     <div class="row">
-      <h2>All pets</h2>
-      <p>Find all the pets looking for a loving home today!</p>
+      <h2 class="center-align">All pets</h2>
+      <p class="center-align">Find all the pets looking for a loving home today!</p>
+      <p class="center-align">Click on my name below to find out more about me!</p>
     </div>
-  
+
+    <div class="carousel">
+    <a class="carousel-item" href="#one!"><img src="/images/one.jpeg" ></a>
+    <a class="carousel-item" href="#five!"><img src="/images/dogone.jpeg"></a>
+    <a class="carousel-item" href="#two!"><img src="/images/two.jpeg"></a>
+    <a class="carousel-item" href="#six!"><img src="/images/dogtwo.jpeg"></a>
+    <a class="carousel-item" href="#three!"><img src="/images/three.jpeg"></a>
+    <a class="carousel-item" href="#seven!"><img src="/images/dogthree.jpeg"></a>
+    <a class="carousel-item" href="#four!"><img src="/images/four.jpeg"></a>
+    <a class="carousel-item" href="#eight!"><img src="/images/dogfour.jpeg"></a>
+  </div>
+
     <ul class="collection">
       {{#each pets}}
-      <li class="collection-item">
+      <li class="collection center-align">
         <a href="/pet/{{this.id}}">{{this.name}} | {{this.type}}</a>
       </li>
       {{/each}}
     </ul>
-  
-  </div>
-</main>
+
+</main> 
