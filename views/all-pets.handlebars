@@ -1,10 +1,10 @@
-<main>
+<main id="all-pets">
   <div class="container">
   
     <div class="row">
       <h2 class="center-align">All pets</h2>
       <p class="center-align">Find all the pets looking for a loving home today!</p>
-      <p class="center-align">Click on my name below to find out more about me!</p>
+      <p class="center-align">Click on my picture below to find out more about me!</p>
     </div>
 
    <div class="row">
@@ -17,7 +17,8 @@
 
     <div class="row">
       <div class="s12">
-        <ul class="collection" id="all-pets-list">
+        <ul class="collection with-header" id="all-pets-list">
+          <li class="collection-header center"><h4>Available Animals</h4></li>
           {{#each pets}}
           <li class="collection-item center-align">
             <a href="/pet/{{this.id}}">{{this.name}} | {{this.type}}</a>

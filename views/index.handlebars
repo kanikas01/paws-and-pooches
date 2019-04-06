@@ -1,50 +1,26 @@
-<main>
+<main id="index">
   <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <br><br><br>
-        <h1 class="header center teal-text text-lighten-2">Paws and Pooches Animal Shelter</h1>
+    <div class="section no-pad-bot"></div>
+    <div class="parallax"><img src="/images/animals-banner.png" alt="row of animals"></div>
+  </div>
+  
+  <div class="container" id="index-info">
+    <div class="row center">
+      <h1 class="header center teal-text text-lighten-2">Paws and Pooches Animal Shelter</h1>
         <div class="row center">
           <h5 class="header col s12 dark">DEDICATED TO FINDING HOMES FOR THESE WONDERFUL ANIMALS</h5>
         </div>
-  
-        <br><br>
-  
-      </div>
-    </div>
-    <div class="parallax"><img src="/images/animals-banner.png" alt="img1"></div>
-  </div>
-  
-  
-  <div class="container">
-    <div class="row center">
-  
       <h5 class="header col s12 light">We are dedicated to helping you find your best friend. Our state-of-the-art service
         will match you with the perfect companion!</h5>
   
-      <a href="/add-user" id="download-button"
-        class="btn-large waves-effect waves-light">Get Started</a>
-  
+      <a href="/all-pets" id="download-button"
+        class="btn-large waves-effect waves-light">Find a friend!</a>
     </div>
-    <br>
-    <ul class="collection">
-      {{#each pets}}
-      <li class="collection-item">
-        <a href="pet/{{this.id}}">{{this.name}} | {{this.type}}</a>
-      </li>
-      {{/each}}
-    </ul>
   </div>
   
-  
   <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-  
-      </div>
-    </div>
-    <div class="parallax"><img src="/images/cat.jpeg" alt="img 2"></div>
+    <div class="section no-pad-bot"></div>
+    <div class="parallax"><img src="/images/cat.jpeg" alt="cat lying on grass"></div>
   </div>
   
   <div class="container">
@@ -56,8 +32,8 @@
           <h4>About Us</h4>
           <p class="left-align light">Paws and Pooches Animal Shelter is an independent, nonprofit animal welfare
             organization serving Southern California since 2019. Donations run programs and services.
-            We believe that animals, have value beyond economic measurement, and are entitled
-            to be protected, cared for, and loved.</p>
+            We believe that animals have value beyond economic measurement, and are entitled
+            to be protected, cared for and loved.</p>
         </div>
       </div>
   
