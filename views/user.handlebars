@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col s12 m6 offset-m3">
-        <div class="card">
+        <div class="card user-card">
           <div class="card-content center">
             <span class="card-title">{{user.name}}</span>
             <p><strong>Phone</strong>: {{user.phone}}</p>
@@ -10,8 +10,10 @@
             <p><strong>City</strong>: {{user.city}}</p>
             <p><strong>State</strong>: {{user.state}}</p>
             <p><strong>Zip</strong>: {{user.zip}}</p>
-            <p><a href="/all-pets/{{user.id}}">All pets for this user</a></p>
-            <p><a href="/">← Back To Home</a></p>
+            <div class="card-action">
+              <p><a class="left" href="/all-pets/{{user.id}}">User's Pets</a></p>
+              <p><a class="right" href="/all-pets">All Pets</a></p>
+            </div>
           </div>
         </div>
       </div>
