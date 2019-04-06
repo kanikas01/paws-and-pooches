@@ -1,4 +1,4 @@
-<main id="all-pets">
+<main class="all-list">
   <div class="container">
   
     <div class="row">
@@ -16,15 +16,34 @@
    </div>
 
     <div class="row">
-      <div class="s12">
-        <ul class="collection with-header" id="all-pets-list">
+      <div class="s12 m6">
+        <table class="align-center z-depth-4">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Type</th> 
+            <th>Breed</th>
+            <th>Age</th>
+          </tr>
+          {{#each pets}}
+            <tr>
+              <td></td>
+              <td><a href="/pet/{{this.id}}">{{this.name}}</a></td>
+              <td><a href="/pet/{{this.id}}">{{this.type}}</a></td> 
+              <td><a href="/pet/{{this.id}}">{{this.breed}}</a></td>
+              <td><a href="/pet/{{this.id}}">{{this.age}}</a></td>
+            </tr>
+          </a>
+          {{/each}}
+        </table>
+        {{!-- <ul class="collection with-header" id="all-pets-list">
           <li class="collection-header center"><h4>Available Animals</h4></li>
           {{#each pets}}
           <li class="collection-item center-align">
             <a href="/pet/{{this.id}}">{{this.name}} | {{this.type}}</a>
           </li>
           {{/each}}
-        </ul>
+        </ul> --}}
       </div>
     </div>
 
