@@ -39,6 +39,10 @@ main {
   background-image: url("/images/green-meadow-with-tree-landscape.jpg");
 }
 
+.add-user {
+  background-image: url("/images/blue.jpeg");
+}
+
 .carousel a {
   color: #6a1b9a;
   font-size: 1.75rem;
@@ -88,14 +92,11 @@ tr {
   }
 }
 
-
-.add-user {
-  background-image: url("/images/blue.jpeg");
-
 @media screen and (min-width: 769px) {
   #all-pets-list {
     width: 60%;
     margin: auto;
   }
+
 
 }
