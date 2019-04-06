@@ -7,16 +7,16 @@
             <img src="/images/{{pet.type}}-{{pet.gender}}-generic.jpg">
             <span class="card-title">{{pet.name}}</span>
           </div>
-          <div class="card-content center">
+          <div class="card-content">
             {{!-- <span class="card-title">{{pet.name}}</span> --}}
-            <p><strong>ID</strong>: {{pet.id}}</p>
-            <p><strong>Type</strong>: {{pet.type}}</p>
-            <p><strong>Gender</strong>: {{pet.gender}}</p>
-            <p><strong>Age</strong>: {{pet.age}}</p>
-            <p><strong>Breed</strong>: {{pet.breed}}</p>
+            <p><strong>Name</strong>: <span>{{pet.name}}</p></span>
+            <p><strong>Type</strong>: <span>{{pet.type}}</span></p>
+            <p><strong>Gender</strong>: <span>{{pet.gender}}</span></p>
+            <p><strong>Age</strong>: <span>{{pet.age}}</span></p>
+            <p><strong>Breed</strong>: <span>{{pet.breed}}</span></p>
             <p><strong>Description:</strong> {{pet.description}}</p>
             <div class="card-action">
-              <a class="left" href="/user/{{pet.UserId}}">Pet's User Info</a>
+              <a class="left" href="/user/{{pet.UserId}}">Contact User</a>
               <a class="right" href="/all-pets">All Pets</a>
             </div>
           </div>

@@ -22,8 +22,6 @@ main {
   background-attachment: fixed;
 }
 
-/* '404' and 'no-pets' styling */
-
 .not-found {
   background-image: url("/images/cat-on-right.jpg");
   color: whitesmoke;
@@ -32,8 +30,6 @@ main {
 .not-found a {
   font-size: 1.25rem;
 }
-
-/* END '404' and 'no-pets' styling */
 
 .info-page, .all-list {
   background-image: url("/images/green-meadow-with-tree-landscape.jpg");
@@ -54,6 +50,7 @@ main {
   font-size: 1.75rem;
   font-weight: bold;
   text-transform: uppercase;
+  text-shadow: 1px 1px 2px #ffffff;
 }
 
 #index h1 {
@@ -81,17 +78,20 @@ table {
   margin: auto;
 }
 
-tr {
-  padding-left: 4rem !important;
-  /* font-size: 1.25rem; */
-}
-
 .user-card, .pet-card {
   margin-top: 2rem;
 }
 
+.card-content span {
+  text-transform: capitalize;
+}
+
 form {
   background-color: white;
+}
+
+.modal {
+  color: black;
 }
 
 /* MEDIA QUERIES */
@@ -99,12 +99,5 @@ form {
 @media screen and (min-width: 993px) {
   .brand-logo {
     margin-left: 1rem;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  #all-pets-list {
-    width: 60%;
-    margin: auto;
   }
 }

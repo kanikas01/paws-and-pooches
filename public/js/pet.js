@@ -46,7 +46,7 @@ $(document).ready(function() {
 
     // User Id validation
     if (!$userID.val()) {
-      $modalPara.text("You must choose a User ID.");
+      $modalPara.text("You must select a user.");
       $modal.modal("open");
       return;
     }
