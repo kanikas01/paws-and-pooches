@@ -39,6 +39,10 @@ main {
   background-image: url("/images/green-meadow-with-tree-landscape.jpg");
 }
 
+.add-user {
+  background-image: url("/images/blue.jpeg");
+}
+
 .carousel a {
   color: #6a1b9a;
   font-size: 1.75rem;
@@ -82,12 +86,7 @@ tr {
   .brand-logo {
     margin-left: 1rem;
   }
-
-  table {
-    width: 75%;
-  }
 }
-
 
 .add-user {
   background-image: url("/images/purple.jpeg");
@@ -98,15 +97,14 @@ tr {
     width: 60%;
     margin: auto;
   }
-
 }
 
 main.add-user {
   color: antiquewhite;
-
 }
 
 main.addpet {
   background-image: url("/images/blue.jpeg");
   color: antiquewhite;
 }
+
