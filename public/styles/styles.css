@@ -40,7 +40,13 @@ main {
 }
 
 .add-user {
+  background-image: url("/images/purple.jpeg");
+  color: antiquewhite;
+}
+
+.addpet {
   background-image: url("/images/blue.jpeg");
+  color: antiquewhite;
 }
 
 .carousel a {
@@ -84,6 +90,10 @@ tr {
   margin-top: 2rem;
 }
 
+form {
+  background-color: white;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 993px) {
@@ -92,23 +102,9 @@ tr {
   }
 }
 
-.add-user {
-  background-image: url("/images/purple.jpeg");
-}
-
 @media screen and (min-width: 769px) {
   #all-pets-list {
     width: 60%;
     margin: auto;
   }
 }
-
-main.add-user {
-  color: antiquewhite;
-}
-
-main.addpet {
-  background-image: url("/images/blue.jpeg");
-  color: antiquewhite;
-}
-
