@@ -1,23 +1,23 @@
 <main class="all-list">
   <div class="container">
-  
+
     <div class="row">
-      <h1 class="center-align">All Pets</h1>
-      <h4 class="center-align">We're all looking for loving homes!</h4>
-      <h5 class="center-align">Click on our pictures or scroll through the list below to find out more about us!</h5>
+      <h2 class="center-align">We're all looking for loving homes!</h2>
+      <h4 class="center-align">Click on our pictures or scroll through the list below to find out more about us!</h4>
+      {{!-- <h5 class="center-align">Click on our pictures or scroll through the list below to find out more about us!</h5> --}}
     </div>
 
-   <div class="row">
-      <div class="carousel">
-        {{#each pets}}
-        <a class="carousel-item center" href="/pet/{{this.id}}"><img src="/images/{{this.type}}-generic.jpeg">{{this.name}}</a>
-        {{/each}}
-      </div>
-   </div>
+    <div class="row">
+        <div class="carousel">
+          {{#each pets}}
+          <a class="carousel-item center" href="/pet/{{this.id}}"><img src="/images/{{this.type}}-generic.jpeg">{{this.name}}</a>
+          {{/each}}
+        </div>
+    </div>
 
     <div class="row">
-      <div class="s12 m6">
-        <table class="align-center z-depth-4">
+      <div class="col s12 m10 offset-m1 center-align">
+        <table class="z-depth-4">
           <tr>
             <th></th>
             <th>Name</th>
@@ -36,15 +36,7 @@
           </a>
           {{/each}}
         </table>
-        {{!-- <ul class="collection with-header" id="all-pets-list">
-          <li class="collection-header center"><h4>Available Animals</h4></li>
-          {{#each pets}}
-          <li class="collection-item center-align">
-            <a href="/pet/{{this.id}}">{{this.name}} | {{this.type}}</a>
-          </li>
-          {{/each}}
-        </ul> --}}
       </div>
     </div>
-
+  </div>
 </main> 

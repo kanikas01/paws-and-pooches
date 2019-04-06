@@ -111,10 +111,11 @@ $(document).ready(function() {
     });
   };
 
-  // handleDeleteBtnClick is called when a user's delete button is clicked
-  // Remove the user from the db and refresh the list
+  // handleDeleteBtnClick is called when a pet's delete button is clicked
+  // Remove the pet from the db and refresh the list
   var handleDeleteBtnClick = function() {
     if (confirm("Are you sure you want to delete this pet?")) {
+      console.log($(this));
       var idToDelete = $(this)
         .parent()
         .attr("data-id");

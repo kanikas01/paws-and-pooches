@@ -15,8 +15,10 @@
             <p><strong>Age</strong>: {{pet.age}}</p>
             <p><strong>Breed</strong>: {{pet.breed}}</p>
             <p><strong>Description:</strong> {{pet.description}}</p>
-            <p><a href="/user/{{pet.UserId}}">View pet's user info</a></p>
-            <p><a href="/all-pets">← Back To All Pets</a></p>
+            <div class="card-action">
+              <a class="left" href="/user/{{pet.UserId}}">Pet's User Info</a>
+              <a class="right" href="/all-pets">All Pets</a>
+            </div>
           </div>
         </div>
       </div>
