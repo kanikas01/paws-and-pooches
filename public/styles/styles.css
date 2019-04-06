@@ -90,7 +90,8 @@ tr {
 
 
 .add-user {
-  background-image: url("/images/blue.jpeg");
+  background-image: url("/images/purple.jpeg");
+}
 
 @media screen and (min-width: 769px) {
   #all-pets-list {
@@ -98,4 +99,14 @@ tr {
     margin: auto;
   }
 
+}
+
+main.add-user {
+  color: antiquewhite;
+
+}
+
+main.addpet {
+  background-image: url("/images/blue.jpeg");
+  color: antiquewhite;
 }
