@@ -35,17 +35,14 @@ main {
 
 /* END '404' and 'no-pets' styling */
 
-.info-page {
-  background-image: url("/images/cat-mouth-close.jpg");
-}
-
-#all-pets {
+.info-page, .all-list {
   background-image: url("/images/green-meadow-with-tree-landscape.jpg");
 }
 
 .carousel a {
-  color: whitesmoke;
-  font-size: 1.25rem;
+  color: #6a1b9a;
+  font-size: 1.75rem;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -60,6 +57,20 @@ main {
 .carousel {
   margin-top: -50px;
   max-height: 300px;
+}
+
+#find-friend-button {
+  margin-top: 1rem;
+}
+
+table {
+  background-color: aliceblue;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+tr {
+  padding-left: 4rem !important;
 }
 
 /* MEDIA QUERIES */

@@ -39,7 +39,7 @@ $(document).ready(function() {
   };
 
   // handleFormSubmit is called whenever we submit a new user
-  // Save the new user to the db and refresh the list
+  // Save the new user to the db then load all-users page
   var handleFormSubmit = function(event) {
     event.preventDefault();
 
@@ -105,13 +105,6 @@ $(document).ready(function() {
       alert("User saved!");
       location.assign("/all-users");
     });
-
-    $userName.val("");
-    $userEmail.val("");
-    $userPhone.val("");
-    $userCity.val("");
-    $userState.val("");
-    $userZip.val("");
   };
 
   // handleDeleteBtnClick is called when a user's delete button is clicked
