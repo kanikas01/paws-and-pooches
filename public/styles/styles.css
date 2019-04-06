@@ -10,10 +10,26 @@ main {
   flex: 1 0 auto;
 }
 
-.page-footer {
-  padding-top: 0;
+.header1 {
+  color: red;
+
 }
 
+.page-footer {
+  padding-top: 0;
+  background-color: #7DA2F8;
+}
+
+footer-copyright {
+  background-color: #7DA2F8;
+}
+
+nav-wrapper { 
+  background-color: #7DA2F8;
+}
+nav { 
+  background-color: #7DA2F8;
+}
 /* End sticky footer styles */
 
 main {
@@ -36,17 +52,20 @@ main {
 }
 
 .add-user {
-  background-image: url("/images/purple.jpeg");
-  color: antiquewhite;
-}
+  background-image: url("/images/pixel.jpg");
+  color: white; 
+  }
+  #submit-button {
+    background-color: #7DA2F8;
+  }
 
 .addpet {
   background-image: url("/images/blue.jpeg");
-  color: antiquewhite;
+  color: white;
 }
 
 .carousel a {
-  color: #6a1b9a;
+  color: #7DA2F8;
   font-size: 1.75rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -68,7 +87,9 @@ main {
 
 #find-friend-button {
   margin-top: 1rem;
+  background-color: #7DA2F8
 }
+
 
 table {
   background-color: aliceblue;
