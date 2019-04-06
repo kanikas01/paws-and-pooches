@@ -87,3 +87,24 @@ tr {
     margin-left: 1rem;
   }
 }
+
+.add-user {
+  background-image: url("/images/purple.jpeg");
+}
+
+@media screen and (min-width: 769px) {
+  #all-pets-list {
+    width: 60%;
+    margin: auto;
+  }
+}
+
+main.add-user {
+  color: antiquewhite;
+}
+
+main.addpet {
+  background-image: url("/images/blue.jpeg");
+  color: antiquewhite;
+}
+
