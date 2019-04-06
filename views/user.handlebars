@@ -1,13 +1,15 @@
-<main>
+<main class="info-page">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        <div class="card mt-4">
-          <div class="card-body">
-            <h5 class="card-title">Example</h5>
-            <p><strong>ID</strong>: {{user.id}}</p>
-            <p><strong>Text</strong>: {{user.text}}</p>
-            <p><strong>Description:</strong> {{user.name}}</p>
+      <div class="col s12 m6 offset-m3">
+        <div class="card">
+          <div class="card-content center">
+            <span class="card-title">{{user.name}}</span>
+            <p><strong>Phone</strong>: {{user.phone}}</p>
+            <p><strong>Email</strong>: {{user.email}}</p>
+            <p><strong>City</strong>: {{user.city}}</p>
+            <p><strong>State</strong>: {{user.state}}</p>
+            <p><strong>Zip</strong>: {{user.zip}}</p>
             <p><a href="/all-pets/{{user.id}}">All pets for this user</a></p>
             <p><a href="/">← Back To Home</a></p>
           </div>
