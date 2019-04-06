@@ -1,18 +1,46 @@
 <main class="all-list">
   <div class="container">
   
-    <div class="row">
+    <div class="row center">
       <h2>All pets for user {{user.name}}</h2>
     </div>
+
+    <div class="row">
+      <div class="col s12 m10 offset-m1 center-align">
+        <table class="z-depth-4" id="pet-list">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Type</th> 
+            <th>Breed</th>
+            <th>Age</th>
+            <th></th>
+          </tr>
+          {{#each pets}}
+            <tr>
+              <td></td>
+              <td><a href="/pet/{{this.id}}">{{this.name}}</a></td>
+              <td>{{this.type}}</td> 
+              <td>{{this.breed}}</td>
+              <td>{{this.age}}</td>
+              <td data-id={{this.id}}>
+                <a href="all-pets/{{this.id}}" class="secondary-content delete"><i class="material-icons">delete</i></a>
+              </td>
+            </tr>
+          </a>
+          {{/each}}
+        </table>
+      </div>
+    </div>
   
-    <ul class="collection" id="pet-list">
+    {{!-- <ul class="collection" id="pet-list">
       {{#each pets}}
       <li class="collection-item" data-id={{this.id}}>
         <a href="/pet/{{this.id}}">{{this.name}} | {{this.type}}</a>
         <a href="" class="secondary-content delete"><i class="material-icons">delete</i></a>
       </li>
       {{/each}}
-    </ul>
+    </ul> --}}
   
   </div>
   
