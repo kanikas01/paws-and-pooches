@@ -67,10 +67,13 @@ table {
   background-color: aliceblue;
   border-radius: 5px;
   border: 1px solid gray;
+  text-transform: uppercase;
+  margin: auto;
 }
 
 tr {
   padding-left: 4rem !important;
+  /* font-size: 1.25rem; */
 }
 
 /* MEDIA QUERIES */
@@ -78,6 +81,10 @@ tr {
 @media screen and (min-width: 993px) {
   .brand-logo {
     margin-left: 1rem;
+  }
+
+  table {
+    width: 75%;
   }
 }
 

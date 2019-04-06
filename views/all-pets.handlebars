@@ -2,9 +2,9 @@
   <div class="container">
   
     <div class="row">
-      <h2 class="center-align">All pets</h2>
-      <p class="center-align">Find all the pets looking for a loving home today!</p>
-      <p class="center-align">Click on my picture below to find out more about me!</p>
+      <h1 class="center-align">All Pets</h1>
+      <h4 class="center-align">We're all looking for loving homes!</h4>
+      <h5 class="center-align">Click on our pictures or scroll through the list below to find out more about us!</h5>
     </div>
 
    <div class="row">
@@ -29,9 +29,9 @@
             <tr>
               <td></td>
               <td><a href="/pet/{{this.id}}">{{this.name}}</a></td>
-              <td><a href="/pet/{{this.id}}">{{this.type}}</a></td> 
-              <td><a href="/pet/{{this.id}}">{{this.breed}}</a></td>
-              <td><a href="/pet/{{this.id}}">{{this.age}}</a></td>
+              <td>{{this.type}}</td> 
+              <td>{{this.breed}}</td>
+              <td>{{this.age}}</td>
             </tr>
           </a>
           {{/each}}
