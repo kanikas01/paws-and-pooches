@@ -80,6 +80,10 @@ tr {
   /* font-size: 1.25rem; */
 }
 
+.user-card, .pet-card {
+  margin-top: 2rem;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 993px) {
