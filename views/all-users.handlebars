@@ -1,20 +1,30 @@
-<main>
+<main class="all-list">
   <div class="container">
   
-    <div class="row">
-      <h2>All users</h2>
-      <p>Check out all the users that have their pets up for adoption</p>
+    <div class="row center-align">
+      <h2>All Users</h2>
+      <h5>Check out all the users that have their pets up for adoption</h5>
     </div>
   
-   <ul class="collection" id="user-list">
-      {{#each users}}
-      <li class="collection-item" data-id={{this.id}}>
-        <a href="user/{{this.id}}">{{this.name}} | {{this.type}}</a>
-        {{!-- <a href="" class="secondary-content delete"><i class="material-icons">delete</i></a> --}}
-      </li>
-      {{/each}}
-    </ul>
-  
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <table class="z-depth-4">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>City</th> 
+          </tr>
+          {{#each users}}
+            <tr>
+              <td></td>
+              <td><a href="/user/{{this.id}}">{{this.name}}</a></td>
+              <td>{{this.city}}</td>
+            </tr>
+          </a>
+          {{/each}}
+        </table>
+      </div>
+    </div>
   </div>
   
   <!-- Page-specific JS -->

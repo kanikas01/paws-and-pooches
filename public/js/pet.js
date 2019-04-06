@@ -40,7 +40,7 @@ $(document).ready(function() {
   };
 
   // handleFormSubmit is called whenever we submit a new pet
-  // Save the new pet to the db and refresh the list
+  // Save the new pet to the db then load all-pets page
   var handleFormSubmit = function(event) {
     event.preventDefault();
 
@@ -109,20 +109,13 @@ $(document).ready(function() {
       alert("Pet saved!");
       location.assign("/all-pets");
     });
-
-    $userID.val("");
-    $petName.val("");
-    $petType.val("");
-    $petAge.val("");
-    $petBreed.val("");
-    $petGender.val("");
-    $petDescription.val("");
   };
 
-  // handleDeleteBtnClick is called when a user's delete button is clicked
-  // Remove the user from the db and refresh the list
+  // handleDeleteBtnClick is called when a pet's delete button is clicked
+  // Remove the pet from the db and refresh the list
   var handleDeleteBtnClick = function() {
     if (confirm("Are you sure you want to delete this pet?")) {
+      console.log($(this));
       var idToDelete = $(this)
         .parent()
         .attr("data-id");

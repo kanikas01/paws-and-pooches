@@ -1,15 +1,24 @@
 <main class="info-page">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        <div class="card mt-4">
-          <div class="card-body">
-            <h5 class="card-title">Example</h5>
+      <div class="col s12 m6 offset-m3">
+        <div class="card pet-card">
+          <div class="card-image">
+            <img src="/images/{{pet.type}}-{{pet.gender}}-generic.jpg">
+            <span class="card-title">{{pet.name}}</span>
+          </div>
+          <div class="card-content center">
+            {{!-- <span class="card-title">{{pet.name}}</span> --}}
             <p><strong>ID</strong>: {{pet.id}}</p>
-            <p><strong>Text</strong>: {{pet.text}}</p>
+            <p><strong>Type</strong>: {{pet.type}}</p>
+            <p><strong>Gender</strong>: {{pet.gender}}</p>
+            <p><strong>Age</strong>: {{pet.age}}</p>
+            <p><strong>Breed</strong>: {{pet.breed}}</p>
             <p><strong>Description:</strong> {{pet.description}}</p>
-            <p><a href="/user/{{pet.UserId}}">View pet's user info</a></p>
-            <p><a href="/">← Back To Home</a></p>
+            <div class="card-action">
+              <a class="left" href="/user/{{pet.UserId}}">Pet's User Info</a>
+              <a class="right" href="/all-pets">All Pets</a>
+            </div>
           </div>
         </div>
       </div>
