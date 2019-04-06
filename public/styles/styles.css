@@ -88,9 +88,14 @@ tr {
   }
 }
 
+
+.add-user {
+  background-image: url("/images/blue.jpeg");
+
 @media screen and (min-width: 769px) {
   #all-pets-list {
     width: 60%;
     margin: auto;
   }
+
 }
