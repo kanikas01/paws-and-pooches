@@ -4,31 +4,32 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
 }
 
 main {
   flex: 1 0 auto;
-}
-
-.header1 {
-  color: red;
-
+  font-family: "Times New Roman", Times, serif;
 }
 
 .page-footer {
   padding-top: 0;
-  background-color: #7DA2F8;
+  background-color: #7da2f8;
+  font-family: "Times New Roman", Times, serif;
 }
 
 footer-copyright {
-  background-color: #7DA2F8;
+  background-color: #7da2f8;
+  font-family: "Times New Roman", Times, serif;
 }
 
-nav-wrapper { 
-  background-color: #7DA2F8;
+nav-wrapper {
+  background-color: #7da2f8;
+  font-family: "Times New Roman", Times, serif;
 }
-nav { 
-  background-color: #7DA2F8;
+nav {
+  background-color: #7da2f8;
+  font-family: "Times New Roman", Times, serif;
 }
 /* End sticky footer styles */
 
@@ -36,6 +37,7 @@ main {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .not-found {
@@ -47,25 +49,28 @@ main {
   font-size: 1.25rem;
 }
 
-.info-page, .all-list {
+.info-page,
+.all-list {
   background-image: url("/images/green-meadow-with-tree-landscape.jpg");
+  color: whitesmoke;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .add-user {
-  background-image: url("/images/pixel.jpg");
-  color: white; 
-  }
-  #submit-button {
-    background-color: #7DA2F8;
-  }
+  background-image: url("/images/bw9.jpeg");
+  color: white;
+}
+#submit-button {
+  background-color: #7da2f8;
+}
 
 .addpet {
-  background-image: url("/images/blue.jpeg");
+  background-image: url("/images/bw9.jpeg");
   color: white;
 }
 
 .carousel a {
-  color: #7DA2F8;
+  color: #7da2f8;
   font-size: 1.75rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -87,9 +92,8 @@ main {
 
 #find-friend-button {
   margin-top: 1rem;
-  background-color: #7DA2F8
+  background-color: #7da2f8;
 }
-
 
 table {
   background-color: aliceblue;
@@ -99,7 +103,8 @@ table {
   margin: auto;
 }
 
-.user-card, .pet-card {
+.user-card,
+.pet-card {
   margin-top: 2rem;
 }
 
