@@ -51,63 +51,32 @@ $(document).ready(function() {
       return;
     }
 
-    // Pet name validation
-    if (!$petName.val()) {
-      $modalPara.text("Pet name cannot be blank.");
-      $modal.modal("open");
-      return;
-    }
-
-    // Pet type validation
-    if (!$petType.val()) {
-      $modalPara.text("You must choose a pet type.");
-      $modal.modal("open");
-      return;
-    }
-
-    // Pet age validation
-    if (!$petAge.val() || !$petAge.val().match(/^\d+$/)) {
-      $modalPara.text(
-        "Pet age cannot be blank and must be a number. Enter '0' for animals less than one year old."
-      );
-      $modal.modal("open");
-      return;
-    }
-
-    // Pet breed validation
-    if (!$petBreed.val()) {
-      $modalPara.text("Pet breed cannot be blank.");
-      $modal.modal("open");
-      return;
-    }
-
-    // Pet gender validation
-    if (!$petGender.val()) {
-      $modalPara.text("You must choose a pet gender.");
-      $modal.modal("open");
-      return;
-    }
-
-    // Pet description validation
-    if (!$petDescription.val()) {
-      $modalPara.text("Pet description cannot be blank.");
-      $modal.modal("open");
-      return;
-    }
-
     var pet = {
-      UserId: $userID.val().trim(),
-      name: $petName.val().trim(),
-      type: $petType.val().trim(),
-      age: $petAge.val().trim(),
-      breed: $petBreed.val().trim(),
-      gender: $petGender.val().trim(),
-      description: $petDescription.val().trim()
+      UserId: $userID.val(),
+      name: $petName.val(),
+      type: $petType.val(),
+      age: $petAge.val(),
+      breed: $petBreed.val(),
+      gender: $petGender.val(),
+      description: $petDescription.val()
     };
 
-    API.savePet(pet).then(function() {
-      alert("Pet saved!");
-      location.assign("/all-pets");
+    for (var val in pet) {
+      if (pet[val] === null) {
+        pet[val] = "";
+      }
+      pet[val] = pet[val].trim();
+    }
+
+    API.savePet(pet).then(function(response) {
+      // Back end returns error message if any field fails validation
+      if (response.errors) {
+        $modalPara.text(response.errors[0].message);
+        $modal.modal("open");
+      } else {
+        alert("Pet saved!");
+        location.assign("/all-pets");
+      }
     });
   };
 
