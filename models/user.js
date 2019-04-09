@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notEmpty: {
-          msg: "State cannot be blank."
+          msg: "You must choose a state."
         }
       }
     },
