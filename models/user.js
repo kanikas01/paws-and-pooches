@@ -2,32 +2,57 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     name: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    phone: {
-      type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Name cannot be blank."
+        }
+      }
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isEmail: true
+        isEmail: {
+          msg: "Please enter a valid email address."
+        }
+      }
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Phone number cannot be blank."
+        }
       }
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "City cannot be blank."
+        }
+      }
     },
     state: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "State cannot be blank."
+        }
+      }
     },
     zip: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        is: /^\d{5}$/
+        is: {
+          args: /^\d{5}$/,
+          msg: "Zip code cannot be blank and must contain 5 digits."
+        }
       }
     }
   });
