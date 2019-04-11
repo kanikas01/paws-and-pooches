@@ -2,7 +2,11 @@
 
 A RESTful web app that allows users to view and post animals that are available for adoption. The app utilizes Node and an Express Web Server, is backed by a MySQL Database with a Sequelize ORM, and is hosted on Heroku.
 
-[View the Heroku-hosted app](https://petexchange.herokuapp.com/)
+### [Click here to visit the site](https://petexchange.herokuapp.com/)
+
+### Demo:
+
+![Paws and Pooches demo](demo/paws-and-pooches.gif)
 
 ### Node packages
 * [compression](https://www.npmjs.com/package/compression)
