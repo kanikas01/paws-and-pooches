@@ -43,67 +43,32 @@ $(document).ready(function() {
   var handleFormSubmit = function(event) {
     event.preventDefault();
 
-    // User name validation
-    if (!$userName.val()) {
-      $modalPara.text("User name cannot be blank.");
-      $modal.modal("open");
-      return;
-    }
-
-    // User email validation
-    if (
-      !$userEmail.val() ||
-      !$userEmail
-        .val()
-        .match(
-          /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
-        )
-    ) {
-      $modalPara.text("Please enter a valid email address.");
-      $modal.modal("open");
-      return;
-    }
-
-    // User phone validation
-    if (!$userPhone.val()) {
-      $modalPara.text("Phone number cannot be blank.");
-      $modal.modal("open");
-      return;
-    }
-
-    // User city validation
-    if (!$userCity.val()) {
-      $modalPara.text("City cannot be blank.");
-      $modal.modal("open");
-      return;
-    }
-
-    // User state validation
-    if (!$userState.val()) {
-      $modalPara.text("You must choose a state.");
-      $modal.modal("open");
-      return;
-    }
-
-    // User zip code validation
-    if (!$userZip.val() || !$userZip.val().match(/^\d{5}$/)) {
-      $modalPara.text("Zip code cannot be blank and must contain 5 digits.");
-      $modal.modal("open");
-      return;
-    }
-
     var user = {
-      name: $userName.val().trim(),
-      email: $userEmail.val().trim(),
-      phone: $userPhone.val().trim(),
-      city: $userCity.val().trim(),
-      state: $userState.val().trim(),
-      zip: $userZip.val().trim()
+      name: $userName.val(),
+      email: $userEmail.val(),
+      phone: $userPhone.val(),
+      city: $userCity.val(),
+      state: $userState.val(),
+      zip: $userZip.val()
     };
 
-    API.saveUser(user).then(function() {
-      alert("User saved!");
-      location.assign("/all-users");
+    // Replace null values with empty strings before running trim
+    for (var val in user) {
+      if (user[val] === null) {
+        user[val] = "";
+      }
+      user[val] = user[val].trim();
+    }
+
+    API.saveUser(user).then(function(response) {
+      // Back end returns error message if any field fails validation
+      if (response.errors) {
+        $modalPara.text(response.errors[0].message);
+        $modal.modal("open");
+      } else {
+        alert("User saved!");
+        location.assign("/all-users");
+      }
     });
   };
 

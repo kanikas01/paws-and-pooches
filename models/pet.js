@@ -2,27 +2,58 @@ module.exports = function(sequelize, DataTypes) {
   var Pet = sequelize.define("Pet", {
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Pet name cannot be blank."
+        }
+      }
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    gender: {
-      type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "You must select a pet type."
+        }
+      }
     },
     age: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg:
+            "Pet age cannot be blank and must be a number. Enter '0' for animals less than one year old."
+        }
+      }
     },
     breed: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Breed cannot be blank."
+        }
+      }
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "You must select a gender."
+        }
+      }
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Description cannot be blank."
+        }
+      }
     }
   });
 

@@ -10,9 +10,13 @@ module.exports = function(app) {
 
   // Create a new user
   app.post("/api/users", function(req, res) {
-    db.User.create(req.body).then(function(dbUser) {
-      res.json(dbUser);
-    });
+    db.User.create(req.body)
+      .then(function(dbUser) {
+        res.json(dbUser);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
 
   // Delete a user by id

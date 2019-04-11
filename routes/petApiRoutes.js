@@ -13,9 +13,13 @@ module.exports = function(app) {
 
   // Create a new pet
   app.post("/api/pets", function(req, res) {
-    db.Pet.create(req.body).then(function(dbPet) {
-      res.json(dbPet);
-    });
+    db.Pet.create(req.body)
+      .then(function(dbPet) {
+        res.json(dbPet);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
 
   // Delete a pet by id
